@@ -28,7 +28,7 @@ namespace C__Exam.Others
             {
                 exam = new PracticalExam(dt, numberofquestions);
             }
-            else if (choice == 2)
+            else
             {
                 exam = new FinalExam(dt, numberofquestions);
             }

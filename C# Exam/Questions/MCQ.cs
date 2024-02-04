@@ -6,7 +6,7 @@ namespace C__Exam.Questions
     {
 
 
-        public McqQuestion( string? body, int mark, int rightAnswer) :
+        public McqQuestion( string body, int mark, Answer rightAnswer) :
             base(body, mark, rightAnswer)
         {
             Header = "MCQ Question";

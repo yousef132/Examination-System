@@ -9,15 +9,16 @@ namespace C__Exam.Questions
         public string Body { get; set; }
 
         public int Mark { get; set; }
-        public int RightAnswerId { get; set; }
+
         public string ChosenAnswer { get; set; }
+        public Answer RightAnswer {  get; set; }
 
         public Answer[] Answers;
-        public BaseQuestion( string body, int mark, int rightAnswerid)
+        public BaseQuestion( string body, int mark,Answer rightAnswer)
         {
             Body = body;
             Mark = mark;
-            RightAnswerId = rightAnswerid;
+            RightAnswer = rightAnswer;
         }
 
 		// Indexer for answers of question
@@ -39,6 +40,7 @@ namespace C__Exam.Questions
 				}
 			}
 		}
+
 		public BaseQuestion()
         {
 
@@ -51,7 +53,7 @@ namespace C__Exam.Questions
             {
                 Answers += this.Answers[i] + "    ";
             }
-            return $"\n{Header}    Mark({Mark}) \n\n{Body}  \nChoices :\n\n{Answers}";
+            return $"\n{Header}    Mark({Mark}) \n\n{Body}  \n\nChoices :\n\n{Answers}";
         }
     }
 

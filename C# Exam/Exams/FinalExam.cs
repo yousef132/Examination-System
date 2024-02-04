@@ -11,7 +11,6 @@ namespace C__Exam.Exams
         {
             BaseQuestions = new BaseQuestion[numberOfQuestion];
         }
-
         private TrueOrFalseQuestion CreateTrueOrFalseQuestion(int i)
         {
             i++;
@@ -23,7 +22,12 @@ namespace C__Exam.Exams
             Console.WriteLine();
             int rightAnswer = Helper.CheckInput(1, 2, $"Enter The Right Ansewr For Question Number {i} (1 For True & 2 For False)");
 
-            return new TrueOrFalseQuestion( body, mark, rightAnswer);
+
+			Answer answer = new Answer();
+			answer.Id = rightAnswer;
+
+			answer.Text = (rightAnswer == 1) ? "True" : "False";
+			return new TrueOrFalseQuestion( body, mark, answer);
         }
 
 
@@ -64,48 +68,29 @@ namespace C__Exam.Exams
 
             }
         }
-		public override void ShowExam()
-		{
+        public override void ShowExam()
+        {
             Console.Clear();
-            for (int i = 0;i < BaseQuestions.Length;i++)
+            for (int i = 0; i < BaseQuestions.Length; i++)
             {
                 Console.WriteLine(BaseQuestions[i]);
                 Console.WriteLine("------------------------------");
-
                 int choice;
-				if (BaseQuestions[i]?.Answers?.Length == 2)
-                {				
-                     // T||F Question
-					 choice = Helper.CheckInput(1, 2, "Enter The Answer: ");
-				}
+                if (BaseQuestions[i]?.Answers?.Length == 2)
+                {
+                    // T||F Question
+                    choice = Helper.CheckInput(1, 2, "Enter The Answer: ");
+                }
                 else
                 {
                     // Mcq Question
-					choice = Helper.CheckInput(1, 3, "Enter The Answer: ");
-				}
-				//setting User's Answer for The Current Question Using Indexer
-				BaseQuestions[i].ChosenAnswer = BaseQuestions[i][choice - 1];
-
-				if (choice == BaseQuestions[i]?.RightAnswerId)
-                {
-                    UserTotalMarks += BaseQuestions[i].Mark;
+                    choice = Helper.CheckInput(1, 3, "Enter The Answer: ");
                 }
-                Console.WriteLine();
-                Console.WriteLine("==========================================");
-            }
-            ShowResult();
-        }
 
-		public override string ToString()
-		{
-			string Questinos = "";
-			for (int i = 0; i < BaseQuestions.Length; i++)
-			{
-				Questinos += BaseQuestions[i];
-				Questinos += "\n=========================";
+				EvaluateAnswer(BaseQuestions[i], choice);
 			}
-			return $"Exam Time -> {TimeOfExam} \nNumberOfQuestions -> {NumberOfQuestions} \n{Questinos}  ";
-		}
+			ShowResult();
+        }
 
 		protected override void ShowResult()
 		{
