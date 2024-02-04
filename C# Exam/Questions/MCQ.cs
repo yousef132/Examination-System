@@ -6,14 +6,16 @@ namespace C__Exam.Questions
     {
 
 
-        public McqQuestion(string? header, string? body, int mark, int rightAnswer) :
-            base(header, body, mark, rightAnswer)
+        public McqQuestion( string? body, int mark, int rightAnswer) :
+            base(body, mark, rightAnswer)
         {
+            Header = "MCQ Question";
             Answers = new Answer[3];
         }
         public McqQuestion()
         {
-            Answers = new Answer[3];
+			Header = "MCQ Question";
+			Answers = new Answer[3];
         }
 
 

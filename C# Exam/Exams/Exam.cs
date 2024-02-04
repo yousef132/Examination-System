@@ -19,10 +19,8 @@ namespace C__Exam.Exams
         {
 
             i++;
-            Console.Write($"Enter Header Of Question Number {i} : ");
-            string header = Console.ReadLine();
             Console.Write($"Enter Body Of Question Number {i} : ");
-            string body = Console.ReadLine();
+            string? body = Console.ReadLine();
             int mark = Helper.CheckInput($"Enter Mark Of Question Number {i} : ");
             McqQuestion mcqQuestion = new McqQuestion();
             Console.WriteLine($"The Choices Of Question:");
@@ -30,11 +28,10 @@ namespace C__Exam.Exams
             for (int j = 0; j < 3; j++)
             {
                 Console.Write($"Enter The  Choice Number {j + 1} : ");
-                string choice = Console.ReadLine();
+                string? choice = Console.ReadLine();
 
                 mcqQuestion[j] = choice;
             }
-            mcqQuestion.Header = header;
             mcqQuestion.Mark = mark;
             mcqQuestion.Body = body;
 

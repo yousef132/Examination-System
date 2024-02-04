@@ -34,14 +34,15 @@ namespace C__Exam.Exams
 					UserTotalMarks += BaseQuestions[i].Mark;
 				}
 			}
+
+			ShowResult();
 		}
 
 		protected override void ShowResult()
 		{
-			// Check Here !!!
 			for (int i = 0; i < NumberOfQuestions; i++)
 			{
-				Console.WriteLine($"Q{i + 1}) {BaseQuestions[i].Body} : {BaseQuestions[i][BaseQuestions[i].RightAnswerId-1]}");
+				Console.WriteLine($"Q{i + 1}) {BaseQuestions[i].Body} , Right Answer{BaseQuestions[i][BaseQuestions[i].RightAnswerId-1]}");
 			}
 			Console.WriteLine();
 		}

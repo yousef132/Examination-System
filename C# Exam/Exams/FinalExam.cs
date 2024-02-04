@@ -15,8 +15,7 @@ namespace C__Exam.Exams
         private TrueOrFalseQuestion CreateTrueOrFalseQuestion(int i)
         {
             i++;
-            Console.WriteLine($"Enter Header Of Question Number {i} : ");
-            string header = Console.ReadLine();
+
             Console.WriteLine($"Enter Body Of Question Number {i} : ");
             string body = Console.ReadLine();
             int mark = Helper.CheckInput($"Enter Mark Of Question Number {i} : ");
@@ -24,7 +23,7 @@ namespace C__Exam.Exams
             Console.WriteLine();
             int rightAnswer = Helper.CheckInput(1, 2, $"Enter The Right Ansewr For Question Number {i} (1 For True & 2 For False)");
 
-            return new TrueOrFalseQuestion(header, body, mark, rightAnswer);
+            return new TrueOrFalseQuestion( body, mark, rightAnswer);
         }
 
 
@@ -65,10 +64,6 @@ namespace C__Exam.Exams
 
             }
         }
-
-
-
-
 		public override void ShowExam()
 		{
             Console.Clear();
@@ -88,19 +83,16 @@ namespace C__Exam.Exams
                     // Mcq Question
 					choice = Helper.CheckInput(1, 3, "Enter The Answer: ");
 				}
-
 				//setting User's Answer for The Current Question Using Indexer
 				BaseQuestions[i].ChosenAnswer = BaseQuestions[i][choice - 1];
-
-
 
 				if (choice == BaseQuestions[i]?.RightAnswerId)
                 {
                     UserTotalMarks += BaseQuestions[i].Mark;
                 }
-
-			}
-
+                Console.WriteLine();
+                Console.WriteLine("==========================================");
+            }
             ShowResult();
         }
 
@@ -118,7 +110,7 @@ namespace C__Exam.Exams
 		protected override void ShowResult()
 		{
 			Console.WriteLine("Your Answers :");
-
+            Console.WriteLine();
             for (int i = 0;i < NumberOfQuestions;i++)
             {
                Console.WriteLine($"Q{i+1}) {BaseQuestions[i].Body} : {BaseQuestions[i].ChosenAnswer}");

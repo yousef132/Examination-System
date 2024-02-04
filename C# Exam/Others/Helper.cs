@@ -16,7 +16,6 @@
                         return Choice;
                     }
                 }
-                Console.Clear();
                 Console.WriteLine($"Invalid choice. Input must be Between {low} , {high} Inclusive");
 
             }
@@ -31,7 +30,6 @@
                 Console.WriteLine();
                 if (int.TryParse(Console.ReadLine(), out int Choice))
                     return Choice;
-                Console.Clear();
                 Console.WriteLine("Input must be Number.");
             }
         }

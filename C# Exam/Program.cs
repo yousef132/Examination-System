@@ -19,8 +19,6 @@ namespace C__Exam
 			}
 
 
-
-
 		}
 
 	}
