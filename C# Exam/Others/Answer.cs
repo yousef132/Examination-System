@@ -1,6 +1,6 @@
 ﻿namespace C__Exam.Others
 {
-    public struct Answer : IComparable<Answer>
+    public class Answer : IComparable<Answer>
     {
         public int Id { get; set; }
         public string? Text { get; set; }
@@ -14,8 +14,12 @@
         {
             return $"{Id}.{Text} ";
         }
+        public Answer()
+        {
+            
+        }
 
-		public int CompareTo(Answer otherAnswer) => Id.CompareTo(otherAnswer.Id);
+        public int CompareTo(Answer otherAnswer) => Id.CompareTo(otherAnswer.Id);
  
 	}
 }

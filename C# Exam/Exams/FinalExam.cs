@@ -98,7 +98,7 @@ namespace C__Exam.Exams
             Console.WriteLine();
             for (int i = 0;i < NumberOfQuestions;i++)
             {
-               Console.WriteLine($"Q{i+1}) {BaseQuestions[i].Body} : {BaseQuestions[i].ChosenAnswer}");
+               Console.WriteLine($"Q{i+1}) {BaseQuestions[i].Body}   ,   Your Answer : {BaseQuestions[i].ChosenAnswer}");
             }
             Console.WriteLine();    
             Console.WriteLine($"Your Exam Grade is {UserTotalMarks} From {GetTotalMarks(BaseQuestions)}");

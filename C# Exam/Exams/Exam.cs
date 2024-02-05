@@ -36,10 +36,12 @@ namespace C__Exam.Exams
             mcqQuestion.Body = body;
 
 			int rightAnswerId = Helper.CheckInput(1, 3, "Enter The Right Answer : ");
-			Answer answer = new Answer();
-            answer.Id = rightAnswerId;
+			Answer answer = new Answer(rightAnswerId, mcqQuestion[rightAnswerId - 1]);
 
-            answer.Text = mcqQuestion[rightAnswerId - 1];
+
+            //answer.Id = rightAnswerId;
+
+            //answer.Text = mcqQuestion[rightAnswerId - 1];
 			mcqQuestion.RightAnswer = answer;
 
             return mcqQuestion;
@@ -48,7 +50,7 @@ namespace C__Exam.Exams
         public abstract void ShowExam();
         protected abstract void ShowResult();
 
-		public int GetTotalMarks(BaseQuestion[] BaseQuestions)
+		protected int GetTotalMarks(BaseQuestion[] BaseQuestions)
 		{
 			int total = 0;
 
@@ -60,7 +62,7 @@ namespace C__Exam.Exams
 		}
 
 
-		public void EvaluateAnswer( BaseQuestion question, int choice)
+		protected void EvaluateAnswer( BaseQuestion question, int choice)
 		{
 			Answer answer = new Answer(choice, question[choice - 1]);
 			question.ChosenAnswer = answer.Text;

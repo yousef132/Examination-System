@@ -39,7 +39,7 @@ namespace C__Exam.Exams
 		{
 			for (int i = 0; i < NumberOfQuestions; i++)
 			{
-				Console.WriteLine($"Q{i + 1}) {BaseQuestions[i].Body} , Right Answer  {BaseQuestions[i].RightAnswer.Text}");
+				Console.WriteLine($"Q{i + 1}) {BaseQuestions[i].Body} ,  Right Answer  {BaseQuestions[i].RightAnswer.Text}    , Your Answer {BaseQuestions[i].ChosenAnswer}");
 			}
 			Console.WriteLine();
 		}
