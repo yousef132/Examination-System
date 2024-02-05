@@ -17,11 +17,6 @@ namespace C__Exam.Questions
 			Header = "MCQ Question";
 			Answers = new Answer[3];
         }
-
-
-
-
-
     }
 
 }

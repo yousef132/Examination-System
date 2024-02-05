@@ -33,6 +33,6 @@
                 Console.WriteLine("Input must be Number.");
             }
         }
-    }
+	}
 
 }

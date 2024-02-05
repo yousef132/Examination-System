@@ -38,10 +38,6 @@ namespace C__Exam.Exams
 			int rightAnswerId = Helper.CheckInput(1, 3, "Enter The Right Answer : ");
 			Answer answer = new Answer(rightAnswerId, mcqQuestion[rightAnswerId - 1]);
 
-
-            //answer.Id = rightAnswerId;
-
-            //answer.Text = mcqQuestion[rightAnswerId - 1];
 			mcqQuestion.RightAnswer = answer;
 
             return mcqQuestion;
@@ -61,7 +57,6 @@ namespace C__Exam.Exams
 			return total;
 		}
 
-
 		protected void EvaluateAnswer( BaseQuestion question, int choice)
 		{
 			Answer answer = new Answer(choice, question[choice - 1]);
@@ -74,7 +69,6 @@ namespace C__Exam.Exams
 			Console.WriteLine();
 			Console.WriteLine("==========================================");
 		}
-
 
 		// it's implementations will be 
 		//different for each exam based on its type.
