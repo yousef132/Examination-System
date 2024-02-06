@@ -11,7 +11,7 @@ namespace C__Exam.Exams
 			BaseQuestions = new McqQuestion[numberOfQuestion];
 		}
 
-		public override void MangaeQuestions()
+		public override void ManageQuestions()
 		{
 			for (int i = 0; i < NumberOfQuestions; i++)
 			{

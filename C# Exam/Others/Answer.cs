@@ -19,7 +19,7 @@
             
         }
 
-        public int CompareTo(Answer otherAnswer) => Id.CompareTo(otherAnswer.Id);
+        public int CompareTo(Answer? otherAnswer) => Id.CompareTo(otherAnswer?.Id);
  
 	}
 }

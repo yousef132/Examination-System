@@ -43,9 +43,6 @@ namespace C__Exam.Exams
             return mcqQuestion;
         }
 
-        public abstract void ShowExam();
-        protected abstract void ShowResult();
-
 		protected int GetTotalMarks(BaseQuestion[] BaseQuestions)
 		{
 			int total = 0;
@@ -72,7 +69,11 @@ namespace C__Exam.Exams
 
 		// it's implementations will be 
 		//different for each exam based on its type.
-		public abstract void MangaeQuestions();
-    }
+		public abstract void ManageQuestions();
+		public abstract void ShowExam();
+		protected abstract void ShowResult();
+	}
+
+
 
 }

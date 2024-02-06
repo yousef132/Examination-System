@@ -37,7 +37,7 @@ namespace C__Exam.Others
         public void CreateExam()
         {
             SpecifyExamType();
-            exam?.MangaeQuestions();
+            exam?.ManageQuestions();
         }
     }
 }

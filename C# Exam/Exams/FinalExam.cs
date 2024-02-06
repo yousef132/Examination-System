@@ -31,8 +31,8 @@ namespace C__Exam.Exams
         }
 
 
-        // Manage T|F  and Mcq Questions
-        public override void MangaeQuestions()
+        // Manage T||F  and Mcq Questions
+        public override void ManageQuestions()
         {
             for (int i = 0; i < NumberOfQuestions; i++)
             {
